@@ -20,10 +20,10 @@ app.use('/api/trade', require('./routes/trade'));
 
 // Serve frontend in production
 // Only serve client files if they exist (will exist after build)
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
